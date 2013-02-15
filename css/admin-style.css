@@ -1,0 +1,21 @@
+#wp-admin-bar-wp-logo,
+#wp-admin-bar-new-link,
+#wp-admin-bar-new-media {
+	display:none;
+}
+
+#poststuff .acf_postbox .field {
+	clear:left;
+}
+
+#poststuff .acf_postbox .field:after {
+	clear:both;
+}
+
+#poststuff .acf_postbox .field:before,
+#poststuff .acf_postbox .field:after {
+	content: " ";
+    display: block;
+    height: 0;
+    visibility: hidden;
+}

@@ -1,0 +1,13 @@
+body.login {
+	background:#f6f6f6;
+}
+
+#login {
+	padding-top:34px;
+}
+
+body.login #login h1 a {
+	background: url('../images/logo.png') no-repeat scroll center top transparent;
+	height: 200px;
+	width: 100%;
+}
