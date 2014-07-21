@@ -28,26 +28,17 @@ the_post(); ?>
 <h1 class="visuallyhidden"><?php the_title(); ?></h1>
 <article class="entry-content clearfix">
 	<?php the_content(); ?>
-    
-    <div class="form-holder clearfix">
-		<span class="vollkorn">Patient History Form (Adult)</span>
-		<a class="button gradient" href="<?php the_field('patient_history_form_adult'); ?>">Download PDF</a>
-    </div>
-    
-    <div class="form-holder clearfix">
-    	<span class="vollkorn">Patient History Form (Child)</span>
-        <a class="button gradient" href="<?php the_field('patient_history_form_child'); ?>">Download PDF</a>
-    </div>
-    
-    <div class="form-holder clearfix">
-    	<span class="vollkorn">Notice of Privacy Form</span>
-        <a class="button gradient" href="<?php the_field('notice_of_privacy_form'); ?>">Download PDF</a>
-    </div>
-    
-    <div class="form-holder clearfix">
-    	<span class="vollkorn">Policies &amp; Fees</span>
-        <a class="button gradient" href="<?php the_field('policies_fees'); ?>">Download PDF</a>
-    </div>	 
+
+    <?php
+    $forms = get_field('forms');
+    foreach ($forms as $form) { ?>
+        
+        <div class="form-holder clearfix">
+            <span class="vollkorn"><?= $form['name']; ?></span>
+            <a class="button gradient" href="<?= $form['file']; ?>">Download PDF</a>
+        </div>
+
+    <?php } ?> 
     
 </article>
 
