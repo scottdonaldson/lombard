@@ -13,7 +13,7 @@ if(isset($_POST['submitted'])) {
 	if(trim($_POST['email']) === '')  {
 		$emailError = 'Please enter your email address.';
 		$hasError = true;
-	} else if (!eregi("^[A-Z0-9._%-]+@[A-Z0-9._%-]+\.[A-Z]{2,4}$", trim($_POST['email']))) {
+	} else if (!preg_match("/^[_a-z0-9-]+(\.[_a-z0-9-]+)*@[a-z0-9-]+(\.[a-z0-9-]+)*(\.[a-z]{2,})$/i", strtolower(trim($_POST['email'])))) {
 		$emailError = 'You entered an invalid email address.';
 		$hasError = true;
 	} else {
